@@ -1,6 +1,6 @@
 
 import discord
-
+import discord.game
 TOKEN = 'NDkyMjAzMDAxMDQyNDM2MDk3.DohBhA.8_F648ENx8wKmah3U733HwshK98'
 
 client = discord.Client()
@@ -25,7 +25,7 @@ async def on_message(message):
             except:
                 pass
     if message.content.startswith('!heel'):
-
+        pass
 
 # i think that was right XD
     if message.content.startswith('!rekt'):
@@ -34,17 +34,28 @@ async def on_message(message):
 
 
 
-async def random_status();
-    status = ["Sucking titties","Getting money","Shitting pants"]
-    me = discord.utils.find(lambda s: s != None, client.servers).me
-    if not me:
-        return
-    elif not me.game:
-        updated_game = discord.game(name = random.choice(status))
-    else:
-        updated_game = me.game
-        updated_game.name = random.choice(status)
-    await client.change_presence(game = updated_game)
+def rotator(ev):
+    while True:
+        statuses = [
+            'your mind', 'fire', 'knives', 'some plebs',
+            'nuclear launch codes', 'antimatter',
+            'chinchillas', 'catgirls', 'foxes',
+            'fluffy tails', 'dragon maids', 'traps', 'lovely cakes',
+            'tentacle summoning spells', 'genetic engineering',
+            'air conditioning', 'anthrax', 'space ninjas',
+            'a spicy parfait', 'very nasty things', 'numbers',
+            'terminator blueprints', 'love', 'your heart', 'tomatoes',
+            'bank accounts', 'your data', 'your girlfriend', 'your boyfriend',
+            'Scarlet Johanson', 'a new body', 'cameras', 'NSA\'s documents',
+            'mobile suits', 'snakes', 'jelly', 'alcohol', 'the blue king'
+        ]
+        status = f'with {random.choice(statuses)}'
+        game = discord.Game(name=status)
+        try:
+            await ev.bot.change_presence(game=game)
+        except Exception as e:
+            ev.log.error(f'STATUS ROTATION FAILED: {e}')
+        await asyncio.sleep(60)
 
 
 @client.event
