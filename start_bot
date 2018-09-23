@@ -1,2 +1,3 @@
 #!/bin/bash
-python3 disc_bot_example.py
+python3 disc_bot_example.py & >> .bot_lot
+echo $!

@@ -1,7 +1,19 @@
 
 import discord
 # Don't need to import discord.game, included in Discord
-import discord.game
+
+import wolframalpha
+WA_client = wolframalpha.Client("LVA4QG-6LAJGH4P62")
+'''
+res = WA_client.query('temperature in Washington, DC on October 3, 2012')
+
+#---------------------------
+for pod in res.pods:
+    for sub in pod.subpods:
+        print(sub.plaintext)
+        break
+#---------------------------
+'''
 TOKEN = 'NDkyMjAzMDAxMDQyNDM2MDk3.DohBhA.8_F648ENx8wKmah3U733HwshK98'
 
 client = discord.Client()
@@ -20,11 +32,24 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
         await client.join_voice_channel(message.author.voice.voice_channel)
     if message.content.startswith('!heel'):
-        pass #client.is_connected
+        pass
+    if message.content.startswith('!math'):
+        # wolfram aplha API functionality
+        msg = "."
+        res = WA_client.query(message.content[5:])
+        print ('query:' , message.content[5:])
+        try:
+            pods = [pod for pod in res.pods]
+            subs = [sub.text for sub in pods]
+            msg = "\n".join(subs[:2])
+        except:
+            msg = "Not a valid query"
+
+        await client.send_message(message.channel, msg)
 
 # i think that was right XD
     if message.content.startswith('!rekt'):
-        msg = 'You\'re a fucking loser {0.author}'.format(message)
+        msg = 'You\'re a loser {0.author}'.format(message)
         await client.send_message(message.channel, msg)
 
 
