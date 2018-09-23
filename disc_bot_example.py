@@ -1,5 +1,6 @@
 
 import discord
+# Don't need to import discord.game, included in Discord
 import discord.game
 TOKEN = 'NDkyMjAzMDAxMDQyNDM2MDk3.DohBhA.8_F648ENx8wKmah3U733HwshK98'
 
@@ -14,26 +15,20 @@ async def on_message(message):
     if message.content.startswith('!hello'):
         msg = 'Hello {0.author.mention} \n kiss my butthole'.format(message)
         await client.send_message(message.channel, msg)
-    if message.content.startswith('!c\'mere'):
+    if message.content.startswith('!cmere'):
         msg = 'OMW Homie!'
         await client.send_message(message.channel, msg)
-        channels_list = [channel for channel in message.server.channels if channel.type is ChannelType.voice]
-        for i in channels_list:
-            try:
-                await client.join_voice_channel(i)
-                break
-            except:
-                pass
+        await client.join_voice_channel(message.author.voice.voice_channel)
     if message.content.startswith('!heel'):
-        pass
+        pass #client.is_connected
 
 # i think that was right XD
     if message.content.startswith('!rekt'):
-        msg = 'You\'re a fucking loser {0.owner}'.format(message)
+        msg = 'You\'re a fucking loser {0.author}'.format(message)
         await client.send_message(message.channel, msg)
 
 
-
+'''
 def rotator(ev):
     while True:
         statuses = [
@@ -52,11 +47,11 @@ def rotator(ev):
         status = f'with {random.choice(statuses)}'
         game = discord.Game(name=status)
         try:
-            await ev.bot.change_presence(game=game)
+            await ev.bot.change_presence(game=game) # this line isn't working
         except Exception as e:
             ev.log.error(f'STATUS ROTATION FAILED: {e}')
         await asyncio.sleep(60)
-
+'''
 
 @client.event
 async def on_ready():
