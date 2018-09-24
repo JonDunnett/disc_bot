@@ -1,4 +1,4 @@
-# disc_bot
+# Spot - A spotify discord bot
 A discord bot to play spotify audio. Also can query wolfram alpha for some reason but that functionality may move to another bot.
 The intent is to basically have a headless spotify box and pipe the audio into the discord bot instead of speakers. Then users can 
 control the music (play, skip, add to queue, ect) all from their own spotify client. This way the audio will be shared with your 
