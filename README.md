@@ -6,9 +6,9 @@ discord group without having to sacrifice your own line of communication. Simila
 and text based music control is kind of clunky.
 
 ## To Dos:
-[x] Create bot
-[x] Connect to voice client
-[x] Wolfram alpha queries 
-[ ] Pipe spotify audio to voice client
-[ ] Disconnect from voice client
+- [x] Create bot
+- [x] Connect to voice client
+- [x] Wolfram alpha queries 
+- [ ] Pipe spotify audio to voice client
+- [ ] Disconnect from voice client
 
