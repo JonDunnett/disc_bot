@@ -4,16 +4,6 @@ import discord
 
 import wolframalpha
 WA_client = wolframalpha.Client("LVA4QG-6LAJGH4P62")
-'''
-res = WA_client.query('temperature in Washington, DC on October 3, 2012')
-
-#---------------------------
-for pod in res.pods:
-    for sub in pod.subpods:
-        print(sub.plaintext)
-        break
-#---------------------------
-'''
 TOKEN = 'NDkyMjAzMDAxMDQyNDM2MDk3.DohBhA.8_F648ENx8wKmah3U733HwshK98'
 
 client = discord.Client()
@@ -25,14 +15,14 @@ async def on_message(message):
         return
 
     if message.content.startswith('!hello'):
-        msg = 'Hello {0.author.mention} \n kiss my butthole'.format(message)
+        msg = 'Hello {0.author.mention} \n'.format(message)
         await client.send_message(message.channel, msg)
     if message.content.startswith('!cmere'):
         msg = 'OMW Homie!'
         await client.send_message(message.channel, msg)
         await client.join_voice_channel(message.author.voice.voice_channel)
     if message.content.startswith('!heel'):
-        # disconnect from voice client 
+        # disconnect from voice client
         pass
     if message.content.startswith('!math'):
         # wolfram aplha API functionality
