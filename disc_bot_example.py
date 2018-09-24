@@ -32,6 +32,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
         await client.join_voice_channel(message.author.voice.voice_channel)
     if message.content.startswith('!heel'):
+        # disconnect from voice client 
         pass
     if message.content.startswith('!math'):
         # wolfram aplha API functionality
