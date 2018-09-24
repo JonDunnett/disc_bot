@@ -1,2 +1,5 @@
 #!/bin/bash
-kill $(cat .pid)
+if [  -f .pid ]; then
+	kill $(cat .pid)
+	rm .pid
+fi

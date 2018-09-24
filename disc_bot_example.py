@@ -3,6 +3,7 @@ import discord
 # Don't need to import discord.game, included in Discord
 
 import wolframalpha
+
 WA_client = wolframalpha.Client("LVA4QG-6LAJGH4P62")
 TOKEN = 'NDkyMjAzMDAxMDQyNDM2MDk3.DohBhA.8_F648ENx8wKmah3U733HwshK98'
 
