@@ -24,6 +24,7 @@ async def on_message(message):
         await client.join_voice_channel(message.author.voice.voice_channel)
     if message.content.startswith('!heel'):
         # disconnect from voice client
+        # work in progress
         pass
     if message.content.startswith('!math'):
         # wolfram aplha API functionality
@@ -39,36 +40,10 @@ async def on_message(message):
 
         await client.send_message(message.channel, msg)
 
-# i think that was right XD
     if message.content.startswith('!rekt'):
-        msg = 'You\'re a loser {0.author}'.format(message)
+        msg =  '{0.author} got rekt'.format(message)
         await client.send_message(message.channel, msg)
 
-
-'''
-def rotator(ev):
-    while True:
-        statuses = [
-            'your mind', 'fire', 'knives', 'some plebs',
-            'nuclear launch codes', 'antimatter',
-            'chinchillas', 'catgirls', 'foxes',
-            'fluffy tails', 'dragon maids', 'traps', 'lovely cakes',
-            'tentacle summoning spells', 'genetic engineering',
-            'air conditioning', 'anthrax', 'space ninjas',
-            'a spicy parfait', 'very nasty things', 'numbers',
-            'terminator blueprints', 'love', 'your heart', 'tomatoes',
-            'bank accounts', 'your data', 'your girlfriend', 'your boyfriend',
-            'Scarlet Johanson', 'a new body', 'cameras', 'NSA\'s documents',
-            'mobile suits', 'snakes', 'jelly', 'alcohol', 'the blue king'
-        ]
-        status = f'with {random.choice(statuses)}'
-        game = discord.Game(name=status)
-        try:
-            await ev.bot.change_presence(game=game) # this line isn't working
-        except Exception as e:
-            ev.log.error(f'STATUS ROTATION FAILED: {e}')
-        await asyncio.sleep(60)
-'''
 
 @client.event
 async def on_ready():
