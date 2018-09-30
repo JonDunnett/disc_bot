@@ -1,11 +1,11 @@
 
 import discord
 # Don't need to import discord.game, included in Discord
-
+from tokens import WA_TOKEN, DISC_TOKEN
 import wolframalpha
 
-WA_client = wolframalpha.Client("LVA4QG-6LAJGH4P62")
-TOKEN = 'NDkyMjAzMDAxMDQyNDM2MDk3.DohBhA.8_F648ENx8wKmah3U733HwshK98'
+WA_client = wolframalpha.Client(WA_TOKEN)
+TOKEN = DISC_TOKEN
 
 client = discord.Client()
 
