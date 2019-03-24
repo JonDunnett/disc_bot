@@ -1,0 +1,1 @@
+echo "" > .bot_log
