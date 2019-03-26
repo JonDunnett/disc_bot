@@ -26,6 +26,11 @@ async def on_message(message):
         # disconnect from voice client
         # work in progress
         pass
+    if message.content.startswith('!play'):
+        # disc needs a file to read for audio from bot
+        # write audio stream to file or read direct from sound device
+        # I really don't know
+        pass
     if message.content.startswith('!math'):
         # wolfram aplha API functionality
         msg = "."
