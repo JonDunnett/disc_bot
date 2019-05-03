@@ -1,5 +1,5 @@
 
-import discord
+import discord, os, opus 
 # Don't need to import discord.game, included in Discord
 from tokens import WA_TOKEN, DISC_TOKEN
 import wolframalpha
@@ -30,7 +30,7 @@ async def on_message(message):
         # disc needs a file to read for audio from bot
         # write audio stream to file or read direct from sound device
         # I really don't know
-        pass
+        pass 
     if message.content.startswith('!math'):
         # wolfram aplha API functionality
         msg = "."
@@ -39,7 +39,7 @@ async def on_message(message):
         try:
             pods = [pod for pod in res.pods]
             subs = [sub.text for sub in pods]
-            msg = "\n".join(subs[:2])
+            msg = "\n".join(subs[:])
         except:
             msg = "Not a valid query"
 
